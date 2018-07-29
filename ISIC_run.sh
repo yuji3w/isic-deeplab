@@ -19,7 +19,7 @@ DATASET_DIR="datasets"
 # cd to datasets
 cd "${WORK_DIR}/${DATASET_DIR}"
 #Look into this sh thing!!
-###################################################sh just_convert_ISIC.sh
+############sh just_convert_ISIC.sh
 
 # Go back to original directory.
 cd "${CURRENT_DIR}"
@@ -110,20 +110,20 @@ python "${WORK_DIR}"/vis.py \
 CKPT_PATH="${TRAIN_LOGDIR}/model.ckpt-${NUM_ITERATIONS}"
 EXPORT_PATH="${EXPORT_DIR}/frozen_inference_graph.pb"
 
-python "${WORK_DIR}"/export_model.py \
-  --logtostderr \
-  --checkpoint_path="${CKPT_PATH}" \
-  --export_path="${EXPORT_PATH}" \
-  --model_variant="xception_65" \
-  --atrous_rates=6 \
-  --atrous_rates=12 \
-  --atrous_rates=18 \
-  --output_stride=16 \
-  --decoder_output_stride=4 \
-  --num_classes=21 \
-  --crop_size=513 \
-  --crop_size=513 \
-  --inference_scales=1.0
+# python "${WORK_DIR}"/export_model.py \
+#   --logtostderr \
+#   --checkpoint_path="${CKPT_PATH}" \
+#   --export_path="${EXPORT_PATH}" \
+#   --model_variant="xception_65" \
+#   --atrous_rates=6 \
+#   --atrous_rates=12 \
+#   --atrous_rates=18 \
+#   --output_stride=16 \
+#   --decoder_output_stride=4 \
+#   --num_classes=21 \
+#   --crop_size=513 \
+#   --crop_size=513 \
+#   --inference_scales=1.0
 
 # Run inference with the exported checkpoint.
 # Please refer to the provided deeplab_demo.ipynb for an example.

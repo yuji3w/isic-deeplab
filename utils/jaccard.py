@@ -31,8 +31,8 @@ def pixelComp(firstPath,secondPath):
 
 def jaccard(bb, br, wb, wr):
 	# Assuming foreground is red
-	intersection = wb
-	union =  wb + bb + wr
+	intersection = wr
+	union = wr + wb + br
 
 	return float(intersection) / union
 
