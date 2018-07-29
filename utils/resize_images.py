@@ -1,7 +1,16 @@
 import os, glob
 import cv2
-ulpath = r"C:\Users\wangy\models\research\deeplab\datasets\pascal_voc_seg\VOCdevkit\VOC2012\SegmentationClass"
+from argparse import ArgumentParser
 import numpy as np
+
+parser = ArgumentParser()
+parser.add_argument("-i", "--input", dest="myInput", help="input directory")
+args = parser.parse_args()
+myInput = args.myInput
+ulpath = myInput
+
+print(ulPath)
+
 for infile in glob.glob( os.path.join(ulpath, "*.png") ):
 	im = cv2.imread(infile)
 	height, width, channels = im.shape
