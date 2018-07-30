@@ -216,7 +216,7 @@ def _build_deeplab(inputs_queue, outputs_to_num_classes, ignore_label):
         samples[common.LABEL],
         num_classes,
         ignore_label,
-        loss_weight=0.1,
+        loss_weight=0.5,
         upsample_logits=FLAGS.upsample_logits,
         scope=output)
 
